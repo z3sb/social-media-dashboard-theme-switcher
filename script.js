@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-  body.className = localStorage.getItem('theme')
+  body.className = localStorage.getItem('theme') == null ? 'light' : localStorage.getItem('theme');
 })
 const button = document.getElementById('btn');
 const body = document.body;
