@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --White: hsl(0, 0%, 100%);
+  /* Primary color */
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --YouTube: hsl(348, 97%, 39%);
+  --button:hsl(230, 22%, 74%);
+}
+.light{
+  --Very-Pale-Blue: hsl(225, 100%, 98%);
+  --box-color: hsl(227, 47%, 96%);
+  --pColor: hsl(228, 12%, 44%);
+  --header-color: hsl(230, 17%, 14%);
+  --hColor:black;
+}
+.dark{
+  --hColor:white;
+  --background-body: hsl(230, 17%, 14%);
+  --Very-Pale-Blue: hsl(232, 19%, 15%);
+  --box-color: hsl(228, 28%, 20%);
+  --pColor: hsl(228, 34%, 66%); 
+  --header-color: hsl(0, 0%, 100%);
+}
+body{
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-body);
+}
+.container{
+  max-width: 1090px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin:auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+img[src='./images/icon-up.svg'] + p{
+  color: var(--Lime-Green);
+}
+img[src='./images/icon-down.svg'] + p{
+  color: var(--Bright-Red);
+}
+/* Header Start */
+header{
+  padding: 25px 0;
+  background-color: var(--Very-Pale-Blue);
+  height: 230px;
+  border-radius: 0 0 15px 15px;
+}
+header .row{
+  justify-content: space-between;
+  align-items: flex-start;
+}
+header .title h1{
+  color: var(--header-color);
+  font-size: 25px;
+}
+header .title p{
+  color: var(--pColor);
+  font-weight: 700;
+  font-size: 13px;
+}
+header .change-theme{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+header .change-theme p{
+  color: var(--pColor);
+  font-weight: 700;
+  font-size: 15px;
+}
+header .change-theme .button{
+  width: 55px;
+  height: 25px;
+  background-color: var(--button);
+  border-radius: 20px;
+  margin-left: 15px;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+}
+header .change-theme .button::before{
+  content: '';
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: var(--White);
+  position: absolute;
+  top:2px;
+  right: 3px;
+  transition: 0.3s ease;
+}
+.dark header .change-theme .button {
+  background: linear-gradient(to right,hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+.dark header .change-theme .button::before{
+  transform: translateX(-28px);
+}
+/* Header End */
+/* Accounts Section Start */
+.our-accounts{
+  position: relative;
+  top: -120px;
+}
+.our-accounts .row{
+  column-gap: 2%;
+}
+.our-accounts .box{
+  flex: 0 0 23%;
+  max-width: 23%;
+  background-color: var(--box-color);
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+}
+.our-accounts .box::before{
+  content: '';
+  width: 100%;
+  height: 3.5px;
+  position: absolute;
+  top:0;
+  left: 0;
+  border-radius: 5px 5px 0 0;
+}
+.our-accounts .box:nth-child(1)::before{
+  background: var(--Facebook);
+}
+.our-accounts .box:nth-child(2)::before{
+  background: var(--Twitter);
+}
+.our-accounts .box:nth-child(3)::before{
+  background: var(--Instagram);
+}
+.our-accounts .box:nth-child(4)::before{
+  background: var(--YouTube);
+}
+.our-accounts .box .user {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.our-accounts .box .user img{
+  margin-right: 10px;
+}
+.our-accounts .box .user p{
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--pColor);
+}
+.our-accounts h1{
+  font-size: 50px;
+  color: var(--hColor);
+}
+.our-accounts h1 + p{
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--pColor);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.our-accounts .box .status{
+  display: inline-flex;
+  align-items: center;
+  margin: 25px 0;
+}
+.our-accounts .box .status img{
+  margin-right: 5px;
+  margin-top:2px
+}
+.our-accounts .box .status p{
+  font-size: 12px;
+  font-weight: 700;
+}
+/* Accounts Section End */
+
+/* Overview Section Start */
+.overview{
+  position: relative;
+  top: -75px;
+}
+.overview h1{
+  color: var(--pColor);
+  margin-bottom: 25px;
+}
+.dark .overview h1{
+  color: white;
+}
+.overview .row{
+  gap: 20px;
+}
+.overview .box{
+  flex: 0 0 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+  background-color: var(--box-color);
+  border-radius: 5px;
+  padding: 20px;
+}
+.overview .box .top,
+.overview .box .bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.overview .box .top{
+  margin: 10px 0;
+  align-items: flex-start;
+}
+.overview .box .top p{
+  color: var(--pColor);
+  font-weight: 700;
+}
+.overview .box .bottom{
+  align-items: flex-end;
+  margin-top: 20px;
+}
+.overview .box .bottom h3{
+  font-size: 30px;
+  color: var(--hColor);
+}
+.overview .box .bottom .case{
+  display: flex;
+  align-items: center;
+}
+.overview .box .bottom .case img{
+  margin-top: 1px;
+  margin-right: 3px;
+}
+.overview .box .bottom .case p{
+  font-size: 12px;
+  font-weight: 700;
+}
+/* Overview Section End */
+/* Creater */
+.attribution{
+  position: relative;
+  top: -20px;
+  text-align: center;
+  color: var(--header-color); 
+  padding: 0 10px;
+}
+.attribution a{
+  text-decoration: none;
+  color: var(--pColor);
+}
+
+/* Media */
+@media (max-width:767px){
+  header .row{
+    flex-direction: column;
+  }
+  header .title{
+    margin-bottom: 10px;
+  }
+  header .change-theme{
+    width: 100%;
+    justify-content: space-between;
+    border-top:1px solid var(--pColor);
+    padding-top: 20px;
+  }
+  .our-accounts{
+    top: -70px;
+  }
+  .container{
+    width: 100%;
+  }
+  .our-accounts .box{
+    flex:0 0 48%;
+    max-width: 48%;
+    margin-bottom: 15px;
+  }
+  .overview .box{
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+@media (max-width:400px){
+  .our-accounts .box{
+    flex:0 0 100%;
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+  .overview .box{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
